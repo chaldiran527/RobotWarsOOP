@@ -74,10 +74,6 @@ public class ArenaGamePanel extends JPanel implements IConstants {
         if(panelController.getRobot().weaponActive("slasher")){
             g2d.drawImage(panelController.getRobot().getSlasher().getImage(),panelController.getRobot().getPosX() + panelController.getRobot().getSlasher().getStrikeGapX(),panelController.getRobot().getPosY() + panelController.getRobot().getSlasher().getStrikeGapY(),null);
         }
-        /*
-        if(panelController.getRobot().)
-                    g2d.drawString(panelController.getRobot().getName(),panelController.getRobot().getPosX(),panelController.getRobot().getPosY()-22);
-         */
     }
 
 }

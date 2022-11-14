@@ -24,7 +24,9 @@ public class ArenaMainController implements KeyListener, ActionListener {
     private Arena arena;
     private RobotFighter robot;
     private boolean shot;
+    private boolean strike;
     private boolean shotPressed;
+    private boolean strikePressed;
 
     public ArenaMainController(RobotFighter pRobot){
         this.robot = pRobot;
@@ -50,7 +52,12 @@ public class ArenaMainController implements KeyListener, ActionListener {
             this.robot.addBlaster(robot.getPosX(),robot.getPosY());
             this.shotPressed = true;
         }
+        if(this.strike == true && this.strikePressed == false){
+            this.robot.startStrike();
+            this.strikePressed = true;
+        }
         this.robot.moveBlasters();
+        this.robot.moveStrikes();
     }
 
 
@@ -81,6 +88,9 @@ public class ArenaMainController implements KeyListener, ActionListener {
         if (code == KeyEvent.VK_SPACE){
             this.shot = true;
         }
+        if(code == KeyEvent.VK_F){
+            this.strike = true;
+        }
     }
 
     @Override
@@ -105,6 +115,9 @@ public class ArenaMainController implements KeyListener, ActionListener {
         }
         if (code == KeyEvent.VK_SPACE){
             this.shotPressed = false;
+        }
+        if (code == KeyEvent.VK_F){
+            this.strikePressed = false;
         }
     }
 

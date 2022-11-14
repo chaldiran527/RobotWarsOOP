@@ -22,7 +22,7 @@ public class ArenaGamePanel extends JPanel implements IConstants {
     private Image arenaBackground;
     private RobotFighter robot;
     private Image fire;
-
+    private Font myFont;
 
     public ArenaGamePanel(ArenaMainController pPanelController){
        setFocusTraversalKeysEnabled(false);
@@ -38,6 +38,7 @@ public class ArenaGamePanel extends JPanel implements IConstants {
        this.robot = this.panelController.getRobot();
        this.panelController.setWindow(this);
        this.addKeyListener(pPanelController);
+       myFont = new Font ("bold italic", 1, 22);
     }
 
 
@@ -61,11 +62,22 @@ public class ArenaGamePanel extends JPanel implements IConstants {
         blasters.stream().filter(blaster -> blaster.checkVisibility())
                 .forEach(blaster -> g2d.drawImage(blaster.getLaserImage(),blaster.getPosX(),blaster.getPosY(),this));
         g2d.drawImage(panelController.getRobot().getRobotImg(), panelController.getRobot().getPosX(), panelController.getRobot().getPosY(),null);//Se dibuja el robot con sus atributos actuales
-
-        g2d.drawString(panelController.getRobot().getName(),panelController.getRobot().getPosX(),panelController.getRobot().getPosY()-22);
-
+        g2d.setFont(myFont);
+        g2d.setColor(Color.GREEN);
+        g2d.drawString(panelController.getRobot().getEnergyLife(),panelController.getRobot().getPosX(),panelController.getRobot().getPosY()-17);
+        drawAtacks(g2d);
 
         g2d.dispose();//Dispose como buena practica despues de dibujar en graphics
+    }
+
+    public void drawAtacks(Graphics2D g2d){
+        if(panelController.getRobot().weaponActive("slasher")){
+            g2d.drawImage(panelController.getRobot().getSlasher().getImage(),panelController.getRobot().getPosX() + panelController.getRobot().getSlasher().getStrikeGapX(),panelController.getRobot().getPosY() + panelController.getRobot().getSlasher().getStrikeGapY(),null);
+        }
+        /*
+        if(panelController.getRobot().)
+                    g2d.drawString(panelController.getRobot().getName(),panelController.getRobot().getPosX(),panelController.getRobot().getPosY()-22);
+         */
     }
 
 }

@@ -8,6 +8,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 
 import static model.common.IConstantsV2.LASER_1_SPEED;
+import static model.common.IConstantsV2.SLASH_SPEED;
 
 
 public class RobotFighter extends IRobot {
@@ -19,6 +20,7 @@ public class RobotFighter extends IRobot {
     private double xVelocity;
     private double yVelocity;
     private ArrayList<Laser> blasters;
+    private MurasamaSlash slasher;
 
     public RobotFighter(String pName){
         super();
@@ -32,6 +34,7 @@ public class RobotFighter extends IRobot {
         this.robotImg = new ImageIcon(modRobot).getImage();
         this.width = robotImg.getWidth(null);
         this.width = robotImg.getHeight(null);
+        this.slasher = new MurasamaSlash(SLASH_SPEED);
     }
 
     public void setxVelocity(double xVelocity) {
@@ -70,9 +73,11 @@ public class RobotFighter extends IRobot {
     public Image getRobotImg(){
         return this.robotImg;
     }
-   /* public RobotFighter(Weapon pdirections, DamageLevel pweapons) {
-        super(pdirections, pweapons);
-    }*/
+
+    public String getEnergyLife(){
+        String energy = String.valueOf(energyLife);
+        return energy;
+    }
 
     public MOVEMENT getCurrentMovement(){
         return this.currentMovement;
@@ -82,9 +87,38 @@ public class RobotFighter extends IRobot {
         return this.blasters;
     }
 
+    public MurasamaSlash getSlasher(){
+        return this.slasher;
+    }
     public boolean collision(int x1, int x2, int y1, int y2, int r1, int r2){
         //function for circle collision
         return false;
+    }
+
+    public void startStrike(){
+        if(slasher.isEnabled())
+            this.slasher.startAttack(this.currentOrientation);
+    }
+    public void moveStrikes(){
+        if(slasher.isAttacking()){
+            slasher.attacking();
+        }
+    }
+
+    public boolean weaponActive(String pWeaponName){
+        if(pWeaponName == "slasher"){
+            if(slasher.isAttacking() == true)
+                return true;
+        }
+        if(pWeaponName == "trident"){
+            return true;
+        }
+        if(pWeaponName == "sword"){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public void moveBlasters(){
@@ -102,6 +136,8 @@ public class RobotFighter extends IRobot {
         move(currentMovement,null,g);
         g.drawImage(this.robotImg,posX,posY,pObserver);
     }
+
+
 
     public void setCurrentOrientation(ORIENTATION pOrientation){
         this.currentOrientation = pOrientation;

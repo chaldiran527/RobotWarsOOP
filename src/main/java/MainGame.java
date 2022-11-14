@@ -15,7 +15,7 @@ public class MainGame implements Runnable{
     @Override
     public void run() {
         ArenaMainController controller = new ArenaMainController(new RobotFighter("Krakow"));
-        ArenaMainFrame arenaFrame = new ArenaMainFrame("BotWars", controller);
+        ArenaMainFrame arenaFrame = new ArenaMainFrame("RobotWars", controller);
         ArenaGamePanel gameArena= new ArenaGamePanel(controller);
         arenaFrame.add(gameArena);
 
@@ -30,7 +30,6 @@ public class MainGame implements Runnable{
         double nextDrawTime = System.nanoTime() + drawInterval;
         while(gameLoop != null)//Mientras el ciclo infinito de este juego se esta ejecutando...
         {
-
             currentTime = System.nanoTime();//check current time
             //substract how much time has passed and add it to delta
             delta += (currentTime - lastTime) / gameDrawingInterval;

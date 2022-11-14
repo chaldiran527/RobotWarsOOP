@@ -1,4 +1,4 @@
-package common.robotbase;
+package model.common.robotbase;
 
 import java.util.Arrays;
 

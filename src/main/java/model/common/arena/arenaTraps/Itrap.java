@@ -1,4 +1,4 @@
-package common.arena.arenaTraps;
+package model.common.arena.arenaTraps;
 
 import java.awt.*;
 

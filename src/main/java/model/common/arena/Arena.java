@@ -1,10 +1,8 @@
-package common.arena;
+package model.common.arena;
 
-import common.arena.arenaTraps.FireTrap;
-import common.robotbase.RobotFighter;
+import model.common.arena.arenaTraps.FireTrap;
+import model.common.robotbase.RobotFighter;
 
-import java.awt.*;
-import java.awt.image.ImageObserver;
 import java.util.*;
 
 public class Arena {

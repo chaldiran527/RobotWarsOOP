@@ -1,6 +1,6 @@
 package gui;//3535
 
-import common.IConstants;
+import model.common.IConstants;
 import controllers.*;
 import javax.swing.*;
 import java.awt.*;

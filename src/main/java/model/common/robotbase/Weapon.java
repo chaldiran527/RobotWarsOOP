@@ -1,4 +1,4 @@
-package common.robotbase;
+package model.common.robotbase;
 
 public abstract class Weapon extends DamageLevel {
     private int posX;//Attributes for the drawing of the weapon attack

@@ -1,12 +1,10 @@
-package common.robotbase;
+package model.common.robotbase;
 
 import java.awt.Graphics;
 import java.time.LocalTime;
 
-import common.IConstants;
-
-import static common.IConstantsV2.Y_AXIS_BORDER;
-import static common.robotbase.MOVEMENT.*;
+import model.common.IConstants;
+import model.common.IConstantsV2;
 
 public abstract class IRobot implements IConstants {
     protected int energy;
@@ -64,7 +62,7 @@ public abstract class IRobot implements IConstants {
                         break;
                     }
                 case DOWN:
-                    if(posY+speed < Y_AXIS_BORDER) {
+                    if(posY+speed < IConstantsV2.Y_AXIS_BORDER) {
                         posY += speed;
                         break;
                     }

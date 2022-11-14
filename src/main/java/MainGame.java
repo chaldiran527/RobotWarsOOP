@@ -1,9 +1,7 @@
-package model.common;
-
-import model.common.robotbase.RobotFighter;
 import controllers.ArenaMainController;
 import gui.ArenaGamePanel;
 import gui.ArenaMainFrame;
+import model.common.robotbase.RobotFighter;
 
 
 public class MainGame implements Runnable{
@@ -46,7 +44,7 @@ public class MainGame implements Runnable{
     }
 
     public static void main(String[] args) {
-        //Se instancia y se llama a la clase que mainGame que ejecuta el ciclo infinito
+        //Se instancia y se llama a la clase mainGame que ejecuta el ciclo infinito
         MainGame robotWars = new MainGame();
         robotWars.startGameLoop();
     }

@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8b2bb50-9ac6-40e2-922c-477422bcf9aa" name="Changes" comment="" />
+    <list default="true" id="e8b2bb50-9ac6-40e2-922c-477422bcf9aa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/images/blaster1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/images/blaster2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MainGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ArenaMainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/ArenaGamePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/ArenaMainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ArenaMainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/IConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/IConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/IConstantsV2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/arena/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/arena/Arena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/arena/arenaTraps/FireTrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/arena/arenaTraps/FireTrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/arena/arenaTraps/Itrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/arena/arenaTraps/Itrap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/robotbase/DamageLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/robotbase/DamageLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/robotbase/IRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/robotbase/IRobot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/robotbase/Laser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/robotbase/MOVEMENT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/robotbase/MOVEMENT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/robotbase/ORIENTATION.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/robotbase/ORIENTATION.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/robotbase/RobotFighter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/robotbase/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/robotbase/Weapon.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HWFsz4dBLyJI9vMb188WgpTuRb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -16,9 +48,32 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/FMZ/Desktop/OOP/RobotWarsOOP/src/main/java/images"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\FMZ\Desktop\OOP\RobotWarsOOP\src\main\java\images" />
+      <recent name="C:\Users\FMZ\Desktop\OOP\RobotWarsOOP\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\FMZ\Desktop\OOP\RobotWarsOOP\src\main\java\images" />
+      <recent name="C:\Users\FMZ\Desktop\OOP\RobotWarsOOP\src\main\java\images\traps" />
+      <recent name="C:\Users\FMZ\Desktop\OOP\RobotWarsOOP\src\main\java\images\robotFighter" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="gui" />
+      <recent name="controllers" />
+      <recent name="model.common.robotbase" />
+      <recent name="model.common" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

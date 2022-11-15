@@ -100,6 +100,14 @@ public class RobotFighter extends IRobot {
         }
     }
 
+    public void setPosX(int pPosX){
+        this.posX = pPosX;
+    }
+
+    public void setPosY(int pPosY){
+        this.posY = pPosY;
+    }
+
     public MOVEMENT getCurrentMovement(){
         return this.currentMovement;
     }

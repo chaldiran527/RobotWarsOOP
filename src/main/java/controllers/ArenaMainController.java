@@ -27,6 +27,7 @@ public class ArenaMainController implements KeyListener, ActionListener {
     private ArenaGamePanel arenaPanel;
     private Arena arena;
     private RobotFighter robot;
+    private RobotFighter robot2;
     private ArrayList<FireTrap> fireTrampas;
 
     private DiscusTrap diskTrap;
@@ -34,9 +35,23 @@ public class ArenaMainController implements KeyListener, ActionListener {
     private boolean strike;
     private boolean shotPressed;
     private boolean strikePressed;
+    private int robotID;
 
-    public ArenaMainController(RobotFighter pRobot){
-        this.robot = pRobot;
+    public ArenaMainController(RobotFighter pRobot, int robotID){
+        this.robot2 = new RobotFighter(("Naqshan"));//always overiterate robot.2 without checking its id
+        this.robot2.setPosX(1140);
+        this.robot2.setPosY(60);
+        //////////
+        if(robotID != 2){
+            this.robot = pRobot;
+
+        }
+        if(robotID == 2){
+            this.robot = robot2;
+            robot2 = pRobot;
+        }
+
+
         this.arena = new Arena("RobotWarsArena");
         fireTrampas = arena.getFireTraps();
         diskTrap = arena.getDiskTrap();
@@ -54,6 +69,9 @@ public class ArenaMainController implements KeyListener, ActionListener {
     public RobotFighter getRobot() {
         return robot;
     }
+
+    public RobotFighter getRobot2(){ return robot2;}
+
     public void update(Graphics g){
         updateRobotFighter(g);
         //////////////////////////////

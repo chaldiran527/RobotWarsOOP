@@ -31,6 +31,7 @@ public class GameServer {
                 //Now that a client has connected: We get In/Out streams
                 DataInputStream in = new DataInputStream(s.getInputStream());//stream to receive
                 DataOutputStream out = new DataOutputStream(s.getOutputStream());//stream to send
+
                 numPlayers++;//A player has connected so we increase number of players
                 out.writeInt(numPlayers);//this allows to send an integer to the client->send number of the player
                 System.out.println("Player #" + numPlayers + " has connected");

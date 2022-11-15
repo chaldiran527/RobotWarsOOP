@@ -13,7 +13,7 @@ public class MainGame implements Runnable{
     //
     private Socket socket;
     //
-    private int playerID;
+    private int playerID = 0;
 
     public void startGameLoop(){
         gameLoop = new Thread(this);
@@ -37,7 +37,7 @@ public class MainGame implements Runnable{
 
     @Override
     public void run() {
-        ArenaMainController controller = new ArenaMainController(new RobotFighter("Krakow"));
+        ArenaMainController controller = new ArenaMainController(new RobotFighter("Krakow"), playerID);
         ArenaMainFrame arenaFrame = new ArenaMainFrame("RobotWars", controller);
         ArenaGamePanel gameArena= new ArenaGamePanel(controller);
         arenaFrame.add(gameArena);

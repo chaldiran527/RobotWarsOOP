@@ -6,6 +6,11 @@ public abstract class  Itrap {
     protected double posX;
     protected double posY;
 
+    protected int width;
+    protected int height;
+    protected int damage;
+    protected Rectangle hitBox;
+
     public Itrap(int pX, int pY){
         this.posX = pX;
         this.posY = pY;

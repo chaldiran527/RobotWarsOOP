@@ -15,10 +15,13 @@ public class MurasamaSlash extends Weapon{
     private Image spriteL2;
     private Image spriteL3;
     private ORIENTATION currORIENTATION;
+    private int damage;
+    private int energyConsumption;
     private int spriteCounter;
     private boolean isActive;
     private int strikeGapXAxis;
     private int strikeGapYAxis;
+
 
     protected MurasamaSlash(int pSpeed) {
         super(pSpeed);
@@ -31,6 +34,8 @@ public class MurasamaSlash extends Weapon{
         this.spriteCounter = -999;//num ridiculoso
         this.strikeGapYAxis = STRIKE_GAP_Y_Axis;
         this.isActive = false;
+        this.damage = SLASH_DAMAGE;
+        this.energyConsumption = SLASH_CONSUMPTION;
     }
 
     @Override
@@ -77,6 +82,14 @@ public class MurasamaSlash extends Weapon{
             isActive = false;
             return false;
         }
+    }
+
+    public int getDamage(){
+        return this.damage;
+    }
+
+    public int getEnergyConsumption(){
+        return this.energyConsumption;
     }
 
     public int getStrikeGapX(){

@@ -50,19 +50,24 @@ public class ArenaGamePanel extends JPanel implements IConstants {
 
     private void doDrawing(Graphics g){
         Graphics2D g2d = (Graphics2D) g;
-        List<FireTrap> fireTraps = gameArena.getFireTraps();//Lista con todas las trampas
-        //
+        List<FireTrap> fireTraps = panelController.getFireTraps();//gameArena.getFireTraps();//Lista con todas las trampas
+
         g2d.drawImage(arenaBackground,0,0,IConstants.ARENA_WIDTH,IConstants.ARENA_HEIGTH,null);
-        //Se dibbujan por medio de un stream function todas las trampas de esta respectiva arena
+        //Se dibujan por medio de un stream function todas las trampas de fuego esta respectiva arena
         fireTraps.stream().forEach(fireTrap ->
                 g2d.drawImage(fireTrap.getTrapImage(),(int)fireTrap.getX(),(int)fireTrap.getY(),this));
 
         panelController.update(g);//Se actualizan los valores del robot y las trampas en el controller
+        g2d.drawImage(panelController.getDiskTraps().getDiscusTrapImage(),panelController.getDiskTraps().getX(),panelController.getDiskTraps().getY(),this);
+
         List<Laser> blasters = panelController.getRobot().getBlasters();
         blasters.stream().filter(blaster -> blaster.checkVisibility())
                 .forEach(blaster -> g2d.drawImage(blaster.getLaserImage(),blaster.getPosX(),blaster.getPosY(),this));
         g2d.drawImage(panelController.getRobot().getRobotImg(), panelController.getRobot().getPosX(), panelController.getRobot().getPosY(),null);//Se dibuja el robot con sus atributos actuales
 
+        g2d.drawRect((int)fireTraps.get(0).getHitBox().x,(int)fireTraps.get(0).getHitBox().y,fireTraps.get(0).getHitBox().width,fireTraps.get(0).getHitBox().height);
+        g2d.drawRect(panelController.getDiskTraps().getX(),panelController.getDiskTraps().getY(),panelController.getDiskTraps().getWidth(),panelController.getDiskTraps().getHeight());
+        g2d.drawRect(panelController.getRobot().getHitBox().x,panelController.getRobot().getHitBox().y,panelController.getRobot().getHitBox().width, panelController.getRobot().getHitBox().height);
         g2d.setColor(Color.GREEN);
         g2d.drawString(panelController.getRobot().getEnergyLife(),panelController.getRobot().getPosX(),panelController.getRobot().getPosY()-17);
         drawAtacks(g2d);

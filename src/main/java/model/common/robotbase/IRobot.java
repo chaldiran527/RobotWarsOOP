@@ -13,9 +13,9 @@ public abstract class IRobot implements IConstants {
     protected int strikeIndex;
     protected int weaponIndex;
     protected int speed;
-    protected Weapon weapons[];//difference between OBject [][] instance & Object instance[]
-    protected Weapon strikes[];//array of strikes for the robot, they are set based on the Iconstant in constructor of this class
-    protected DamageLevel directionsdamage[];//
+    protected Weapon weapons[];
+    protected Weapon strikes[];
+    protected DamageLevel directionsdamage[];
     protected MOVEMENT currentMovement;
     protected ORIENTATION currentOrientation;
 
@@ -87,7 +87,7 @@ public abstract class IRobot implements IConstants {
     * acualizar el damage respectivo
     */
     public void damage(int pLevel){
-        // logic for damage in case of collision
+        this.energy -= pLevel;
     }
 
     public void addStrike(Weapon pStrike){

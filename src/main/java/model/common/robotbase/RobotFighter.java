@@ -1,14 +1,15 @@
 package model.common.robotbase;
 
 import gui.ArenaGamePanel;
+import model.common.IConstantsV2;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.ImageObserver;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-import static model.common.IConstantsV2.LASER_1_SPEED;
-import static model.common.IConstantsV2.SLASH_SPEED;
+import static model.common.IConstantsV2.*;
 
 
 public class RobotFighter extends IRobot {
@@ -16,9 +17,10 @@ public class RobotFighter extends IRobot {
     private Image robotImg;
     private int width;
     private int height;
-    private double energyLife;
     private double xVelocity;
     private double yVelocity;
+    private int coolDown;
+    private Rectangle hitBox;
     private ArrayList<Laser> blasters;
     private MurasamaSlash slasher;
 
@@ -28,13 +30,15 @@ public class RobotFighter extends IRobot {
         this.name = pName;
         this.posX = 40;
         this.posY = 60;
-        this.energyLife = 100;
+        this.energy = 100;
         this.robotImg = new ImageIcon("src/main/java/images/robotRock.png").getImage();
         Image modRobot = robotImg.getScaledInstance(90,90, Image.SCALE_SMOOTH);
         this.robotImg = new ImageIcon(modRobot).getImage();
         this.width = robotImg.getWidth(null);
-        this.width = robotImg.getHeight(null);
+        this.height = robotImg.getHeight(null);
         this.slasher = new MurasamaSlash(SLASH_SPEED);
+        this.hitBox = new Rectangle(posX,posY,width,height);
+        this.coolDown = -999;
     }
 
     public void setxVelocity(double xVelocity) {
@@ -75,8 +79,15 @@ public class RobotFighter extends IRobot {
     }
 
     public String getEnergyLife(){
-        String energy = String.valueOf(energyLife);
+        String energy = String.valueOf(this.energy);
         return energy;
+    }
+
+    public void setEnergy(int pLevel){
+        if(coolDown < 0) {
+            this.coolDown = ROBOT_FIGHTER_COOLDOWN;
+            this.damage(pLevel);
+        }
     }
 
     public MOVEMENT getCurrentMovement(){
@@ -93,6 +104,19 @@ public class RobotFighter extends IRobot {
     public boolean collision(int x1, int x2, int y1, int y2, int r1, int r2){
         //function for circle collision
         return false;
+    }
+
+    public void setHitBox(int pX, int pY){
+        this.hitBox.x = pX;
+        this.hitBox.y = pY;
+    }
+
+    public void loadCoolDown(){
+        this.coolDown--;
+    }
+
+    public Rectangle getHitBox(){
+        return hitBox;
     }
 
     public void startStrike(){

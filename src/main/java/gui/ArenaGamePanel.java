@@ -69,7 +69,8 @@ public class ArenaGamePanel extends JPanel implements IConstants {
         g2d.drawRect(panelController.getDiskTraps().getX(),panelController.getDiskTraps().getY(),panelController.getDiskTraps().getWidth(),panelController.getDiskTraps().getHeight());
         g2d.drawRect(panelController.getRobot().getHitBox().x,panelController.getRobot().getHitBox().y,panelController.getRobot().getHitBox().width, panelController.getRobot().getHitBox().height);
         g2d.setColor(Color.GREEN);
-        g2d.drawString(panelController.getRobot().getEnergyLife(),panelController.getRobot().getPosX(),panelController.getRobot().getPosY()-17);
+        if(panelController.getRobot().getEnergy() > 0)  g2d.drawString(panelController.getRobot().getEnergyLife(),panelController.getRobot().getPosX(),panelController.getRobot().getPosY()-17);
+        else g2d.drawString("Destroyed :(",panelController.getRobot().getPosX(),panelController.getRobot().getPosY()-17);
         drawAtacks(g2d);
 
         g2d.dispose();//Dispose como buena practica despues de dibujar en graphics

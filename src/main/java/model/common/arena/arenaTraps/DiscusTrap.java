@@ -26,10 +26,10 @@ public class DiscusTrap extends Itrap{
     }
 
     public void moveDiscus(){
-        if(posX < 0 || posX > ARENA_WIDTH - this.width){//-55 //original 545
+        if(posX < -20 || posX > ARENA_WIDTH -130){//-55 //original 545
             xSpeed =-xSpeed;
         }
-        if(posY < 0 || posY > Y_AXIS_BORDER - this.height){//-70 //original 320
+        if(posY < -10 || posY > Y_AXIS_BORDER-30){//-70 //original 320
             ySpeed =-ySpeed;
         }
         posX += xSpeed;

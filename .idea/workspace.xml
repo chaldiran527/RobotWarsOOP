@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8b2bb50-9ac6-40e2-922c-477422bcf9aa" name="Changes" comment="345">
-      <change afterPath="$PROJECT_DIR$/src/main/java/images/Discus.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/images/diskus.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/images/spikus.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/common/arena/arenaTraps/DiscusTrap.java" afterDir="false" />
+    <list default="true" id="e8b2bb50-9ac6-40e2-922c-477422bcf9aa" name="Changes" comment="456">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ArenaMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ArenaMainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gui/ArenaGamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ArenaGamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/IConstantsV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/IConstantsV2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/common/arena/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/arena/Arena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/arena/arenaTraps/FireTrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/arena/arenaTraps/FireTrap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/arena/arenaTraps/Itrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/arena/arenaTraps/Itrap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/robotbase/IRobot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/robotbase/IRobot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/robotbase/MurasamaSlash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/robotbase/MurasamaSlash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/common/arena/arenaTraps/DiscusTrap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/arena/arenaTraps/DiscusTrap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/common/robotbase/RobotFighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/common/robotbase/RobotFighter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,15 +36,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/FMZ/Desktop/OOP/RobotWarsOOP/src/main/java/images&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "last_opened_file_path": "C:/Users/FMZ/Desktop/OOP/RobotWarsOOP/src/main/java/images",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\FMZ\Desktop\OOP\RobotWarsOOP\src\main\java\images" />
@@ -125,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668470956360</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="456">
+      <created>1668507380524</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1668507380524</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,6 +145,7 @@
     <MESSAGE value="123" />
     <MESSAGE value="234" />
     <MESSAGE value="345" />
-    <option name="LAST_COMMIT_MESSAGE" value="345" />
+    <MESSAGE value="456" />
+    <option name="LAST_COMMIT_MESSAGE" value="456" />
   </component>
 </project>

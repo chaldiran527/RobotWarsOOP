@@ -20,6 +20,7 @@ public class RobotFighter extends IRobot {
     private double xVelocity;
     private double yVelocity;
     private int coolDown;
+    private int movement;
     private Rectangle hitBox;
     private ArrayList<Laser> blasters;
     private MurasamaSlash slasher;
@@ -39,6 +40,7 @@ public class RobotFighter extends IRobot {
         this.slasher = new MurasamaSlash(SLASH_SPEED);
         this.hitBox = new Rectangle(posX,posY,width,height);
         this.coolDown = -999;
+        this.movement = 0;
     }
 
     public void setxVelocity(double xVelocity) {
@@ -48,6 +50,9 @@ public class RobotFighter extends IRobot {
     public void setyVelocity(double yVelocity) {
         this.yVelocity = yVelocity;
     }
+
+    public void setMovement(int pMov){this.movement += pMov;}
+    public int  getMovement(int pMov){return movement;}
 
     public int getPosX(){
         return this.posX;
@@ -81,6 +86,10 @@ public class RobotFighter extends IRobot {
     public String getEnergyLife(){
         String energy = String.valueOf(this.energy);
         return energy;
+    }
+
+    public int getEnergy(){
+        return this.energy;
     }
 
     public void setEnergy(int pLevel){
@@ -177,7 +186,19 @@ public class RobotFighter extends IRobot {
         speed = pSpeed;
     }
 
+    public void update(MOVEMENT pMove){
+        if(pMove != null) {
+            this.movement += Math.abs(this.speed);
+            move(pMove, null, null);
+        }
+        if(this.movement > 1000){
+            this.setEnergy(1);
+            this.movement = 0;
+        }
+    }
+
     @Override
     protected void refreshMove(MOVEMENT pMove, LocalTime pActionTime, Graphics g) {
+        move(pMove,null,null);
     }
 }

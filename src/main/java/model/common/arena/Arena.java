@@ -22,6 +22,10 @@ public class Arena {
         this.fireTraps.add(new FireTrap(440,310));
         this.fireTraps.add(new FireTrap(650,85));
         this.fireTraps.add(new FireTrap(770,600));
+        this.fireTraps.add(new FireTrap(840,490));
+        this.fireTraps.add(new FireTrap(356,550));
+        this.fireTraps.add(new FireTrap(156,180));
+        this.fireTraps.add(new FireTrap(990,200));
         this.diskTrap = new DiscusTrap(200,300);
     }
 

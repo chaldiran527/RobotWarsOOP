@@ -57,16 +57,12 @@ public class ArenaMainController implements KeyListener, ActionListener {
     public void update(Graphics g){
         updateRobotFighter(g);
         //////////////////////////////
-        if(this.shot == true && this.shotPressed == false){
+        if(this.shot == true && this.shotPressed == false && robot.getEnergy() > 0){
             this.robot.addBlaster(robot.getPosX(),robot.getPosY());
             this.robot.setEnergy(BLASTER_CONSUMPTION);
             this.shotPressed = true;
         }
-        if(this.strike == true && this.strikePressed == false){
-            System.out.print("X OF RobotBox IS-> " + robot.getHitBox().getX());
-            System.out.print("  Y OF ROBOTBox IS-> " + robot.getHitBox().getY());
-            System.out.print("  Width OF ROBOTBox IS-> " + robot.getHitBox().getWidth());
-            System.out.println("  Height OF ROBOTBox IS-> " + robot.getHitBox().getHeight());
+        if(this.strike == true && this.strikePressed == false && robot.getEnergy() > 0){
             this.robot.startStrike();
             this.robot.setEnergy(robot.getSlasher().getEnergyConsumption());
             this.strikePressed = true;
@@ -96,7 +92,8 @@ public class ArenaMainController implements KeyListener, ActionListener {
     }
 
     public void updateRobotFighter(Graphics g){
-        this.robot.move(this.robot.getCurrentMovement(),null,g);
+        //this.robot.move(this.robot.getCurrentMovement(),null,g);
+        this.robot.update(this.robot.getCurrentMovement());
         this.robot.setCurrentMovement(null);
         this.robot.setHitBox(robot.getPosX(),robot.getPosY());
         this.robot.loadCoolDown();
@@ -116,31 +113,34 @@ public class ArenaMainController implements KeyListener, ActionListener {
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
 
-        if (code == KeyEvent.VK_UP) {
-            robot.setCurrentMovement(UP);
-            robot.setSpeed(ROBOT_SPEED_DEFAULT);
-            robot.setCurrentOrientation(ORIENTATION.NORTH);
-        }
-        if (code == KeyEvent.VK_DOWN) {
-            robot.setCurrentMovement(DOWN);
-            robot.setSpeed(ROBOT_SPEED_DEFAULT);
-            robot.setCurrentOrientation(ORIENTATION.SOUTH);
-        }
-        if (code == KeyEvent.VK_LEFT) {
-            robot.setCurrentMovement(LEFT);
-            robot.setSpeed(ROBOT_SPEED_DEFAULT);
-            robot.setCurrentOrientation(ORIENTATION.EAST);
-        }
-        if (code == KeyEvent.VK_RIGHT) {
-            robot.setCurrentMovement(RIGHT);
-            robot.setSpeed(ROBOT_SPEED_DEFAULT);
-            robot.setCurrentOrientation(ORIENTATION.WEST);
-        }
-        if (code == KeyEvent.VK_SPACE){
-            this.shot = true;
-        }
-        if(code == KeyEvent.VK_F){
-            this.strike = true;
+        if(robot.getEnergy() > 0)
+        {
+            if (code == KeyEvent.VK_UP) {
+                robot.setCurrentMovement(UP);
+                robot.setSpeed(ROBOT_SPEED_DEFAULT);
+                robot.setCurrentOrientation(ORIENTATION.NORTH);
+            }
+            if (code == KeyEvent.VK_DOWN) {
+                robot.setCurrentMovement(DOWN);
+                robot.setSpeed(ROBOT_SPEED_DEFAULT);
+                robot.setCurrentOrientation(ORIENTATION.SOUTH);
+            }
+            if (code == KeyEvent.VK_LEFT) {
+                robot.setCurrentMovement(LEFT);
+                robot.setSpeed(ROBOT_SPEED_DEFAULT);
+                robot.setCurrentOrientation(ORIENTATION.EAST);
+            }
+            if (code == KeyEvent.VK_RIGHT) {
+                robot.setCurrentMovement(RIGHT);
+                robot.setSpeed(ROBOT_SPEED_DEFAULT);
+                robot.setCurrentOrientation(ORIENTATION.WEST);
+            }
+            if (code == KeyEvent.VK_SPACE) {
+                this.shot = true;
+            }
+            if (code == KeyEvent.VK_F) {
+                this.strike = true;
+            }
         }
     }
 

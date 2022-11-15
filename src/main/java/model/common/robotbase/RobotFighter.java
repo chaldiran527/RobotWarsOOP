@@ -32,6 +32,7 @@ public class RobotFighter extends IRobot {
         this.posX = 40;
         this.posY = 60;
         this.energy = 100;
+
         this.robotImg = new ImageIcon("src/main/java/images/robotRock.png").getImage();
         Image modRobot = robotImg.getScaledInstance(90,90, Image.SCALE_SMOOTH);
         this.robotImg = new ImageIcon(modRobot).getImage();

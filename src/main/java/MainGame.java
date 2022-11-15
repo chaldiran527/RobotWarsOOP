@@ -37,7 +37,6 @@ public class MainGame implements Runnable{
             if(delta >= 1){
                 gameArena.repaint();
                 delta--;
-                drawingCounter++;
             }
         }
     }

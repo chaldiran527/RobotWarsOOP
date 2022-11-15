@@ -65,6 +65,8 @@ public class ArenaGamePanel extends JPanel implements IConstants {
                 .forEach(blaster -> g2d.drawImage(blaster.getLaserImage(),blaster.getPosX(),blaster.getPosY(),this));
         g2d.drawImage(panelController.getRobot().getRobotImg(), panelController.getRobot().getPosX(), panelController.getRobot().getPosY(),null);//Se dibuja el robot con sus atributos actuales
 
+        g2d.drawImage(panelController.getRobot2().getRobotImg(),panelController.getRobot().getPosX(),panelController.getRobot2().getPosY(), null);
+
         g2d.setColor(Color.GREEN);
         if(panelController.getRobot().getEnergy() > 0)  g2d.drawString(panelController.getRobot().getEnergyLife(),panelController.getRobot().getPosX(),panelController.getRobot().getPosY()-17);
         else g2d.drawString("Destroyed :(",panelController.getRobot().getPosX(),panelController.getRobot().getPosY()-17);
@@ -77,7 +79,6 @@ public class ArenaGamePanel extends JPanel implements IConstants {
         if(panelController.getRobot().weaponActive("slasher")){
             g2d.drawImage(panelController.getRobot().getSlasher().getImage(),panelController.getRobot().getPosX() + panelController.getRobot().getSlasher().getStrikeGapX(),panelController.getRobot().getPosY() + panelController.getRobot().getSlasher().getStrikeGapY(),null);
         }
-
     }
 
 }

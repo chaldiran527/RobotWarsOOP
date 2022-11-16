@@ -14,6 +14,11 @@ public class MainGame implements Runnable{
     private Socket socket;
     //
     private int playerID = 0;
+    private ReadFromServer rfsRunnable;
+    private WriteToServer wtsRunnable;
+    private ArenaMainController controller;
+    private ArenaMainFrame arenaFrame;
+    private ArenaGamePanel gameArena;
 
     public void startGameLoop(){
         gameLoop = new Thread(this);
@@ -29,17 +34,22 @@ public class MainGame implements Runnable{
             System.out.println("You are player #" + playerID);
             if(playerID == 1){
                 System.out.println("Waiting for player #2 to connect...");
+
             }
+            rfsRunnable = new ReadFromServer(in);
+            wtsRunnable = new WriteToServer(out);
+            rfsRunnable.waitForStartMsg();
         }catch(IOException e){
             System.out.println("IOException from connectToServer()");
         }
     }
 
+
     @Override
     public void run() {
-        ArenaMainController controller = new ArenaMainController(new RobotFighter("Krakow"), playerID);
-        ArenaMainFrame arenaFrame = new ArenaMainFrame("RobotWars", controller);
-        ArenaGamePanel gameArena= new ArenaGamePanel(controller);
+        controller = new ArenaMainController(new RobotFighter("Krakow"), playerID);
+        arenaFrame = new ArenaMainFrame("RobotWars", controller);
+        gameArena= new ArenaGamePanel(controller);
         arenaFrame.add(gameArena);
 
         double gameDrawingInterval = 1000000000 / 100;//Replace 60 with a frames per second constant
@@ -60,12 +70,74 @@ public class MainGame implements Runnable{
         }
     }
 
+    private class ReadFromServer implements Runnable{
+
+        private DataInputStream dataIn;
+
+        public ReadFromServer(DataInputStream in){
+            dataIn = in;
+            System.out.println("RFS Runnable created");
+        }
+        @Override
+        public void run() {
+            try{
+                while(true){
+                    if(controller != null) {
+                        controller.getRobot2().setPosX((int) dataIn.readDouble());
+                        controller.getRobot2().setPosY((int) dataIn.readDouble());
+                    }
+                }
+            } catch(IOException ex){
+                System.out.println("IOException from RFS run()");
+            }
+        }
+
+        public void waitForStartMsg(){
+            try{
+                String startMsg = dataIn.readUTF();
+                System.out.println("Message from server: " + startMsg);
+                Thread readThread = new Thread(rfsRunnable);
+                Thread writeThread = new Thread(wtsRunnable);
+                readThread.start();
+                writeThread.start();
+            } catch(IOException e){
+                System.out.println("IOException from waitForStartMsg()");
+            }
+        }
+    }
+
+    private class WriteToServer implements Runnable{
+        private DataOutputStream dataOut;
+        public WriteToServer(DataOutputStream out){
+            dataOut = out;
+            System.out.println("WTS Runnable created");
+        }
+        @Override
+        public void run() {
+            try{
+                while(true) {
+                    if(controller != null) {
+                        dataOut.writeDouble(controller.getRobot().getPosX());
+                        dataOut.writeDouble(controller.getRobot().getPosY());
+                        dataOut.flush();//flush the toilet
+                    }
+                    try{
+                        Thread.sleep(25);
+                    }catch(InterruptedException e){
+                        System.out.println("InterruptedException at WTS run()");
+                    }
+                }
+            }catch(IOException ex){
+                System.out.println("IOException at WTS run()");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         //Se instancia y se llama a la clase mainGame que ejecuta el ciclo infinito
         MainGame robotWars = new MainGame();
-        robotWars.connectToServer();
         robotWars.startGameLoop();
+        robotWars.connectToServer();
     }
-
 
 }

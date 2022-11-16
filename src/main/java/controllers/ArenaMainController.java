@@ -39,7 +39,7 @@ public class ArenaMainController implements KeyListener, ActionListener {
 
     public ArenaMainController(RobotFighter pRobot, int robotID){
         this.robot2 = new RobotFighter(("Naqshan"));//always overiterate robot.2 without checking its id
-        this.robot2.setPosX(1140);
+        this.robot2.setPosX(980);
         this.robot2.setPosY(60);
         //////////
         if(robotID != 2){

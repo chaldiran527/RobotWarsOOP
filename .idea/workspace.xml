@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8b2bb50-9ac6-40e2-922c-477422bcf9aa" name="Changes" comment="678" />
+    <list default="true" id="e8b2bb50-9ac6-40e2-922c-477422bcf9aa" name="Changes" comment="678">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/communication/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/communication/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ArenaMainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ArenaMainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/MainGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/MainGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/ArenaGamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/ArenaGamePanel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,7 +82,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="MainGame" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="game.MainGame" />
       <module name="RobotWarsOOP" />
       <extension name="coverage">
@@ -89,6 +95,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.GameServer" />
+      <item itemvalue="Application.MainGame" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.MainGame" />
@@ -182,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668555938165</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="678">
+      <created>1668556452104</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1668556452104</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
